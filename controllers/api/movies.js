@@ -1,7 +1,8 @@
-
+import fetch from "node-fetch";
 
 
 function indexMovie(req, res) {
+  
   const data = {
     a: [],
     b: [],
