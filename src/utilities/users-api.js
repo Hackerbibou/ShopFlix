@@ -1,5 +1,5 @@
 import sendRequest from "./send-request";
-const BASE_URL = 'https://shopflix-api.onrender.com/api/users'; 
+const BASE_URL = '/api/users'; 
 // https://shopflix-api.onrender.com
 
 export async function signUp(userData) {

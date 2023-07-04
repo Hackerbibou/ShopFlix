@@ -13,6 +13,7 @@ import Kids from '../Kids/Kids';
 import Setting from '../Setting/Setting';
 import Trending from '../Trending/Trending';
 import Upcoming from '../Upcoming/Upcoming';
+
 export default function App() {
   const [trending, setTrending]= useState([])
   const [user, setUser] = useState(getUser());
@@ -29,7 +30,7 @@ export default function App() {
               <Route path='/upcoming' element={<Upcoming />}/>
               <Route path='/search' element={<Search/>}/>
               <Route path='/kids' element={<Kids/>}/>
-              <Route path='/setting' element={<Setting/>} setUser={setUser}/>
+              <Route path='/setting' element={<Setting user={user} setUser={setUser}/>}/>
               <Route path="/orders/new" element={<NewOrderPage />} />
 
               {/* Route components in here */}

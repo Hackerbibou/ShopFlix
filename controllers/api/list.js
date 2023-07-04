@@ -37,7 +37,19 @@ function getList(req,res){
     .catch((error)=>console.log(error))
 
 }
+function removeItem(req,res){
+    List.findOne({user:req.user._id})
+    .then((foundDoc)=>{
+        foundDoc.movies=foundDoc.movies.filter(elem=>elem.items.name!==req.params.name)
+        foundDoc.save()
+        res.status(200).json(foundDoc.movies)
+    })
+    
+    .catch((error)=>console.log(error))
+
+}
 module.exports={
     indexList,
-    getList
+    getList,
+    removeItem
 }

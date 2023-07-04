@@ -2,11 +2,12 @@ import React, {useState, useEffect} from 'react'
 import {getKids} from '../../utilities/movies-api'
 import './Kids.css'
 import { motion } from 'framer-motion'
+import PopUp from '../Movies/Popup'
 export default function Kids() {
     const [movies, setMovies]= useState([])
     const [d,setD]=useState(0)
-   
-
+    const [popUp, setPopUp] = useState({});
+    
   const [currentPage, setCurrentPage] = useState(1);
   const handlePreviousPage = () => {
     setCurrentPage(currentPage - 1);
@@ -33,6 +34,7 @@ export default function Kids() {
     
   return (
     <div>
+        <PopUp popUp={popUp} />
         <h1>Kids</h1>
         <div className='KidsWrapper'>
             
@@ -41,6 +43,11 @@ export default function Kids() {
                 return <motion.div
                 transition={{delay:0.2*(i+3)}}
                 initial={{opacity:0,delay:0.1*i}}
+                onClick={() => {
+                    setPopUp({ ...elem });
+                    document.querySelector('.popup').style.display = 'flex';
+                    console.log('this is popUp', popUp);
+                  }}
                 animate={{opacity:1,delay:0.1*i}}
                 exit={{opacity:0,delay:0.1*i}} key={i} className='movie1' style={{backgroundImage:`url("https://www.themoviedb.org/t/p/original${elem.backdrop_path}")`}}/>
 

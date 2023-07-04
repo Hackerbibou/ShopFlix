@@ -1,15 +1,17 @@
 import { useState } from 'react';
 import * as usersService from '../../utilities/users-service';
 
-export default function LoginForm({ setUser }) {
+export default function LoginForm({ setUser, setUpdate }) {
   const [credentials, setCredentials] = useState({
     email: '',
     password: ''
   });
+  
   const [error, setError] = useState('');
 
   function handleChange(evt) {
     setCredentials({ ...credentials, [evt.target.name]: evt.target.value });
+    setUpdate({ ...credentials, [evt.target.name]: evt.target.value });
     setError('');
   }
 

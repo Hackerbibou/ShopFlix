@@ -34,6 +34,13 @@ h1{
   align-items: center;
   
 }
+.settin{
+  font-size: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
 .authSi{
   display: flex;
   align-items:center
@@ -88,6 +95,9 @@ h1{
   width: 400px;
   height:600px;
    
+}
+input{
+  color:#ffffff
 }
 
 .movie1 {

@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import './Setting.css';
-import { editUser } from '../../utilities/users-api';
-import { getUser } from '../../utilities/users-service';
-export default function Setting({ setUser, user }) {
-  const [states, setStates] = useState({ name: '', profilePic: '' });
+import { editUser } from '../../utilities/users-api';  
+import { Link } from 'react-router-dom';
+export default function Setting({ setUser, user}) {
+  const [states, setStates] = useState({ name: user.name, profilePic: user.profilePic });
+  const [isUpdated,setIsupdated] = useState(false)
   function handleName(e) {
     e.preventDefault();
-    setStates({ name: e.target.value, profilePic: states.name });
+    if(states.name===''||states.name.split(" ").length<1){setStates({ name: states.name, profilePic: states.profilePic});}
+    else{setStates({ name: e.target.value, profilePic: states.profilePic });}
   }
   function handleProfilePic(e,val) {
     e.preventDefault();
@@ -14,30 +16,38 @@ export default function Setting({ setUser, user }) {
     setStates({ name: states.name, profilePic: val});
   }
   function handleSubmit(e) {
-    console.log(states);
     e.preventDefault();
-    console.log(states);
+    console.log(user)
+    setUser({...user,name:states.name,profilePic:states.profilePic});
+    
     async function Edit() {
-      console.log(states);
+
       const edit = await editUser(states);
       console.log(edit);
-      const temp = { ...user };
-      temp.name = states.name;
-      temp.profilePic = states.profilePic;
-      setUser(temp);
+      
+        
+        
+     
     }
     Edit();
+    setIsupdated(true)
+      setTimeout(()=>{setIsupdated(false)},3000)
+    console.log(user)
+    
+   
   }
   return (
-    <div>
-      <h1>Settings</h1>
+     <div className='set'>
+     <h1 className='setH1'>Settings</h1>
+    <div className="settin">
+     
       <form className='editForm' onSubmit={handleSubmit}>
         <label className="userName">
           <h3>Edit username</h3>
           <input className='userNameInput' type="text" name="username" onChange={handleName} />
         </label>
         <div className="profilPic">
-          <h3>Edit profile pic</h3>
+          <h3>Choose profile picture</h3>
           <div className="profilDiv">
            <div onClick={(e)=>handleProfilePic(e,"https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png")}
            
@@ -148,8 +158,10 @@ export default function Setting({ setUser, user }) {
             </div>
           </div>
         </div>
-        <button className='btn-edit' onSubmit={handleSubmit}>Submit</button>
+        <button className='btn-edit' onSubmit={handleSubmit} >Submit</button>
+        {isUpdated && <div style={{color:'white'}}>Profile updated</div>}
       </form>
+    </div>
     </div>
   );
 }

@@ -22,6 +22,7 @@ function handleClick(e){
        
      }
         getMo()
+        setTimeout(()=>{window.location.reload()},0.5) 
         
    
     
@@ -44,7 +45,7 @@ function handleClick(e){
       </p>
       <p className='overview'>{popUp.overview}</p>
       <div className='btnDiv'>
-      <Link to='/list'><button onClick={handleClick}>ADD LIST</button></Link>
+      <Link to='/list' ><button onClick={handleClick}>ADD LIST</button></Link>
           <Link to='/list'><button>MY LIST</button></Link></div>
       </div>
       
