@@ -10,7 +10,7 @@
     flex-direction: column;
     align-items: left;
     justify-content: space-between;
-    color: rgb(229, 229, 229);
+    color: #d1d1d1;
     padding: 40px 0 40px 70px; 
     display: none;
     transition-property: width;

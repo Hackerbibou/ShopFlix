@@ -79,10 +79,10 @@ export default function Movies({setCart, cart, setTrending}) {
         {movies.a?movies.a.map((movie, i) => {
           return (
             <motion.div
-            transition={{delay:0.3*i}}
+            transition={{delay:0.2*(i+3)}}
             initial={{opacity:0,delay:0.1*i}}
             animate={{opacity:1,delay:0.1*i}}
-            exit={{opacity:0,delay:0.1*i}}
+            exit={{opacity:0,delay:0.1*i}} 
               key={i}
               onClick={()=> {
                 setPopUp({...movie})
@@ -102,12 +102,12 @@ export default function Movies({setCart, cart, setTrending}) {
      <div className="secondScroll"> 
       <div className="second">
         {movies.b?movies.b.map((movie, i) => {
-          return (
+          return movie.backdrop_path &&(
             <motion.div
-            transition={{delay:0.3*i}}
+            transition={{delay:0.2*(i+3)}}
             initial={{opacity:0,delay:0.1*i}}
             animate={{opacity:1,delay:0.1*i}}
-            exit={{opacity:0,delay:0.1*i}}
+            exit={{opacity:0,delay:0.1*i}} 
               key={i} 
               onClick={()=> {
                 setPopUp({...movie})
@@ -127,12 +127,12 @@ export default function Movies({setCart, cart, setTrending}) {
       <div className="secondScroll"> 
       <div className="second">
         {movies.c?movies.c.map((movie, i) => {
-          return (
+          return movie.backdrop_path &&(
             <motion.div
-            transition={{delay:0.3*i}}
+            transition={{delay:0.2*(i+3)}}
             initial={{opacity:0,delay:0.1*i}}
             animate={{opacity:1,delay:0.1*i}}
-            exit={{opacity:0,delay:0.1*i}}
+            exit={{opacity:0,delay:0.1*i}} 
               key={i}
               onClick={()=> {
                 setPopUp({...movie})
@@ -152,12 +152,12 @@ export default function Movies({setCart, cart, setTrending}) {
         <div className="secondScroll"> 
       <div className="second">
         {movies.d?movies.d.map((movie, i) => {
-          return (
+          return movie.backdrop_path &&(
             <motion.div
-            transition={{delay:0.3*i}}
+            transition={{delay:0.2*(i+3)}}
             initial={{opacity:0,delay:0.1*i}}
             animate={{opacity:1,delay:0.1*i}}
-            exit={{opacity:0,delay:0.1*i}}
+            exit={{opacity:0,delay:0.1*i}} 
               key={i}
               onClick={()=> {
                 setPopUp({...movie})
@@ -178,7 +178,7 @@ export default function Movies({setCart, cart, setTrending}) {
       <div className="secondScroll"> 
       <div className="second">
         {movies.e?movies.e.map((movie, i) => {
-          return (
+          return movie.backdrop_path && (
             <motion.div
             transition={{delay:0.3*i}}
             initial={{opacity:0,delay:0.1*i}}
@@ -204,7 +204,7 @@ export default function Movies({setCart, cart, setTrending}) {
       <div className="secondScroll"> 
       <div className="second">
         {movies.f?movies.f.map((movie, i) => {
-          return (
+          return movie.backdrop_path &&(
             <motion.div
             transition={{delay:0.3*i}}
             initial={{opacity:0,delay:0.1*i}}
@@ -230,7 +230,7 @@ export default function Movies({setCart, cart, setTrending}) {
       <div className="secondScroll"> 
       <div className="second">
         {movies.g?movies.g.map((movie, i) => {
-          return (
+          return movie.backdrop_path &&(
             <motion.div
             transition={{delay:0.3*i}}
             initial={{opacity:0,delay:0.1*i}}

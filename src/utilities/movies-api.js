@@ -1,8 +1,17 @@
 import sendRequest from "./send-request";
-const BASE_URL = '/api/movies';
+const BASE_URL = 'https://shopflix-api.onrender.com/api/movies';
 
 export async function getMovies() {
   return sendRequest(BASE_URL)
+}
+export async function getTrending(page) {
+  return sendRequest(`${BASE_URL}/trending/${page}`)
+}
+export async function getUpcoming(page) {
+  return sendRequest(`${BASE_URL}/upcoming/${page}`)
+}
+export async function getKids(page) {
+  return sendRequest(`${BASE_URL}/kids/${page}`)
 }
 export async function getSearchResult(movie) {
   return sendRequest(BASE_URL+'/'+movie)

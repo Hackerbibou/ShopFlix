@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {getSearchResult} from '../../utilities/movies-api'
+import {motion} from 'framer-motion'
 import './Search.css'
 export default function Search() {
     const [movies, setMovies]= useState([])
@@ -29,10 +30,11 @@ export default function Search() {
 
             {movies===[]?<>No movies</>:
             movies.map((elem,i)=>{
-                return <div key={i} className='movie1' style={{backgroundImage:`url("https://www.themoviedb.org/t/p/original${elem.backdrop_path}")`}}>
-
-
-                </div>
+                return elem.backdrop_path && <motion.div
+                transition={{delay:0.2*(i+3)}}
+                initial={{opacity:0,delay:0.1*i}}
+                animate={{opacity:1,delay:0.1*i}}
+                exit={{opacity:0,delay:0.1*i}}  className='movie1' style={{backgroundImage:`url("https://www.themoviedb.org/t/p/original${elem.backdrop_path}")`}}/>
             })
             }
             </div>

@@ -24,7 +24,7 @@ function indexMovie(req, res) {
   const url5 ='https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=27%2C80'
   const url6 ='https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=28%2C12';
   const url7 ='https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&certification_country=US&certification.lte=PG&with_genres=PG%2c16%2C10751%2C14&include_adult=false&sort_by=popularity.desc';
-
+  
     
     
   fetch(url1, options)
@@ -88,7 +88,70 @@ function searchApi(req, res){
   .catch(error=>console.log(error))
 }
 
+function trendingPages(req, res){
+  const url = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${req.params.page}&sort_by=popularity.desc`
+  const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization:
+        'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNTVmOWQzZjFlODc0ZmJlYTYwNzg0OTRhNTExYTZkNCIsInN1YiI6IjY0OWEwZGI0ZmVkNTk3MDEyY2ViNWVjOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.r23OhEtDFB5Bv1JyLo6qvMQTWtQ3fB9Lng7nAHNITkk',
+    },
+  };
+  fetch(url, options)
+  .then((rizz)=>rizz.json())
+  .then((Api)=>{
+
+    res.status(200).json(Api)
+
+  })
+  .catch(error=>console.log(error))
+}
+
+function kidsPages(req, res){
+  const url = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&certification_country=US&certification.lte=PG&with_genres=PG%2c16%2C10751%2C14&include_adult=false&sort_by=popularity.desc&page=${req.params.page}`
+  const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization:
+        'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNTVmOWQzZjFlODc0ZmJlYTYwNzg0OTRhNTExYTZkNCIsInN1YiI6IjY0OWEwZGI0ZmVkNTk3MDEyY2ViNWVjOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.r23OhEtDFB5Bv1JyLo6qvMQTWtQ3fB9Lng7nAHNITkk',
+    },
+  };
+  fetch(url, options)
+  .then((rizz)=>rizz.json())
+  .then((Api)=>{
+
+    res.status(200).json(Api)
+
+  })
+  .catch(error=>console.log(error))
+}
+
+function upcomingPages(req, res){
+  const url = `https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=${req.params.page}`
+  const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization:
+        'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNTVmOWQzZjFlODc0ZmJlYTYwNzg0OTRhNTExYTZkNCIsInN1YiI6IjY0OWEwZGI0ZmVkNTk3MDEyY2ViNWVjOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.r23OhEtDFB5Bv1JyLo6qvMQTWtQ3fB9Lng7nAHNITkk',
+    },
+  };
+  fetch(url, options)
+  .then((rizz)=>rizz.json())
+  .then((Api)=>{
+
+    res.status(200).json(Api)
+
+  })
+  .catch(error=>console.log(error))
+}
+
 module.exports = {
   indexMovie,
-  searchApi
+  searchApi,
+  trendingPages,
+  upcomingPages,
+  kidsPages,
 };
