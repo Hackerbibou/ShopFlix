@@ -1,3 +1,6 @@
+const fetch = require('node-fetch');
+
+
 function indexMovie(req, res) {
   const data = {
     a: [],
