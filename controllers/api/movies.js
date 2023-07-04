@@ -1,4 +1,4 @@
-const fetch=require("node-fetch");
+const axios = require('axios');
 
 
 function indexMovie(req, res) {
@@ -12,77 +12,131 @@ function indexMovie(req, res) {
     f: [],
     g: [],
   };
-  const url1 =
-    'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc';
-  const options = {
+  const options1 = {
     method: 'GET',
+    url: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc',
     headers: {
       accept: 'application/json',
-      Authorization:
-        'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNTVmOWQzZjFlODc0ZmJlYTYwNzg0OTRhNTExYTZkNCIsInN1YiI6IjY0OWEwZGI0ZmVkNTk3MDEyY2ViNWVjOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.r23OhEtDFB5Bv1JyLo6qvMQTWtQ3fB9Lng7nAHNITkk',
-    },
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNTVmOWQzZjFlODc0ZmJlYTYwNzg0OTRhNTExYTZkNCIsInN1YiI6IjY0OWEwZGI0ZmVkNTk3MDEyY2ViNWVjOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.r23OhEtDFB5Bv1JyLo6qvMQTWtQ3fB9Lng7nAHNITkk'
+    }
   };
-  const url2 ='https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1'  
-  const url3 ='https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1'
-  const url4 ='https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1'
-  const url5 ='https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=27%2C80'
-  const url6 ='https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=28%2C12';
-  const url7 ='https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&certification_country=US&certification.lte=PG&with_genres=PG%2c16%2C10751%2C14&include_adult=false&sort_by=popularity.desc';
-  
+  const options2 = {
+    method: 'GET',
+    url: 'https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNTVmOWQzZjFlODc0ZmJlYTYwNzg0OTRhNTExYTZkNCIsInN1YiI6IjY0OWEwZGI0ZmVkNTk3MDEyY2ViNWVjOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.r23OhEtDFB5Bv1JyLo6qvMQTWtQ3fB9Lng7nAHNITkk'
+    }
+  };
+  const options3 = {
+    method: 'GET',
+    url: 'https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNTVmOWQzZjFlODc0ZmJlYTYwNzg0OTRhNTExYTZkNCIsInN1YiI6IjY0OWEwZGI0ZmVkNTk3MDEyY2ViNWVjOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.r23OhEtDFB5Bv1JyLo6qvMQTWtQ3fB9Lng7nAHNITkk'
+    }
+  };
+  const options4 = {
+    method: 'GET',
+    url: 'https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNTVmOWQzZjFlODc0ZmJlYTYwNzg0OTRhNTExYTZkNCIsInN1YiI6IjY0OWEwZGI0ZmVkNTk3MDEyY2ViNWVjOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.r23OhEtDFB5Bv1JyLo6qvMQTWtQ3fB9Lng7nAHNITkk'
+    }
+  };
+  const options5 = {
+    method: 'GET',
+    url: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=27%2C80',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNTVmOWQzZjFlODc0ZmJlYTYwNzg0OTRhNTExYTZkNCIsInN1YiI6IjY0OWEwZGI0ZmVkNTk3MDEyY2ViNWVjOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.r23OhEtDFB5Bv1JyLo6qvMQTWtQ3fB9Lng7nAHNITkk'
+    }
+  };
+  const options6 = {
+    method: 'GET',
+    url: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=28%2C12',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNTVmOWQzZjFlODc0ZmJlYTYwNzg0OTRhNTExYTZkNCIsInN1YiI6IjY0OWEwZGI0ZmVkNTk3MDEyY2ViNWVjOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.r23OhEtDFB5Bv1JyLo6qvMQTWtQ3fB9Lng7nAHNITkk'
+    }
+  };
+  const options7 = {
+    method: 'GET',
+    url: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&certification_country=US&certification.lte=PG&with_genres=PG%2c16%2C10751%2C14&include_adult=false&sort_by=popularity.desc',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNTVmOWQzZjFlODc0ZmJlYTYwNzg0OTRhNTExYTZkNCIsInN1YiI6IjY0OWEwZGI0ZmVkNTk3MDEyY2ViNWVjOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.r23OhEtDFB5Bv1JyLo6qvMQTWtQ3fB9Lng7nAHNITkk'
+    }
+  };
+
     
     
-  fetch(url1, options)
+  axios
+  .request(options1)
     .then((rizz) => rizz.json())
     .then((john) => {
       data.a = [...john.results];
     })
-    fetch(url2, options)
+    .catch(error=>console.log(error))
+    axios
+  .request(options2)
     .then((rizz) => rizz.json())
     .then((john) => {
       data.b = [...john.results];
     })
-    fetch(url3, options)
+    .catch(error=>console.log(error))
+    axios
+  .request(options3)
     .then((rizz) => rizz.json())
     .then((john) => {
       data.c = [...john.results];
     })
-    fetch(url4, options)
+    .catch(error=>console.log(error))
+    axios
+  .request(options4)
     .then((rizz) => rizz.json())
     .then((john) => {
       data.d = [...john.results];
     })
-    fetch(url5, options)
+    .catch(error=>console.log(error))
+    axios
+    .request(options5)
     .then((rizz) => rizz.json())
     .then((john) => {
       data.e = [...john.results];
     })
-    fetch(url6, options)
+    .catch(error=>console.log(error))
+    axios
+  .request(options6)
     .then((rizz) => rizz.json())
     .then((john) => {
       data.f = [...john.results];
     })
-    fetch(url7, options)
+    .catch(error=>console.log(error))
+    axios
+    .request(options7)
     .then((rizz) => rizz.json())
     .then((john) => {
       data.g = [...john.results];
       res.json(data)
 
     })
-    
     .catch((err) => console.error('error:' + err));
 }
 
 function searchApi(req, res){
-  const url = `https://api.themoviedb.org/3/search/movie?query=${req.params.movie}&include_adult=false&language=en-US&page=1`
+
   const options = {
     method: 'GET',
+    url : `https://api.themoviedb.org/3/search/movie?query=${req.params.movie}&include_adult=false&language=en-US&page=1`,
     headers: {
       accept: 'application/json',
       Authorization:
         'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNTVmOWQzZjFlODc0ZmJlYTYwNzg0OTRhNTExYTZkNCIsInN1YiI6IjY0OWEwZGI0ZmVkNTk3MDEyY2ViNWVjOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.r23OhEtDFB5Bv1JyLo6qvMQTWtQ3fB9Lng7nAHNITkk',
     },
   };
-  fetch(url, options)
+
+  axios.request(options)
   .then((rizz)=>rizz.json())
   .then((searchApi)=>{
 
@@ -93,16 +147,17 @@ function searchApi(req, res){
 }
 
 function trendingPages(req, res){
-  const url = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${req.params.page}&sort_by=popularity.desc`
+ 
   const options = {
     method: 'GET',
+    url : `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${req.params.page}&sort_by=popularity.desc`,
     headers: {
       accept: 'application/json',
       Authorization:
         'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNTVmOWQzZjFlODc0ZmJlYTYwNzg0OTRhNTExYTZkNCIsInN1YiI6IjY0OWEwZGI0ZmVkNTk3MDEyY2ViNWVjOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.r23OhEtDFB5Bv1JyLo6qvMQTWtQ3fB9Lng7nAHNITkk',
     },
   };
-  fetch(url, options)
+  axios.request(options)
   .then((rizz)=>rizz.json())
   .then((Api)=>{
 
@@ -113,16 +168,18 @@ function trendingPages(req, res){
 }
 
 function kidsPages(req, res){
-  const url = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&certification_country=US&certification.lte=PG&with_genres=PG%2c16%2C10751%2C14&include_adult=false&sort_by=popularity.desc&page=${req.params.page}`
+  
   const options = {
     method: 'GET',
+    url : `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&certification_country=US&certification.lte=PG&with_genres=PG%2c16%2C10751%2C14&include_adult=false&sort_by=popularity.desc&page=${req.params.page}`,
     headers: {
       accept: 'application/json',
       Authorization:
         'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNTVmOWQzZjFlODc0ZmJlYTYwNzg0OTRhNTExYTZkNCIsInN1YiI6IjY0OWEwZGI0ZmVkNTk3MDEyY2ViNWVjOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.r23OhEtDFB5Bv1JyLo6qvMQTWtQ3fB9Lng7nAHNITkk',
     },
   };
-  fetch(url, options)
+  axios
+  .request(options)
   .then((rizz)=>rizz.json())
   .then((Api)=>{
 
@@ -133,16 +190,17 @@ function kidsPages(req, res){
 }
 
 function upcomingPages(req, res){
-  const url = `https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=${req.params.page}`
   const options = {
     method: 'GET',
+    url : `https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=${req.params.page}`,
     headers: {
       accept: 'application/json',
       Authorization:
         'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNTVmOWQzZjFlODc0ZmJlYTYwNzg0OTRhNTExYTZkNCIsInN1YiI6IjY0OWEwZGI0ZmVkNTk3MDEyY2ViNWVjOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.r23OhEtDFB5Bv1JyLo6qvMQTWtQ3fB9Lng7nAHNITkk',
     },
   };
-  fetch(url, options)
+  axios
+  .request(options)
   .then((rizz)=>rizz.json())
   .then((Api)=>{
 
