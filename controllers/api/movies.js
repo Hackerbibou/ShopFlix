@@ -159,11 +159,7 @@ function trendingPages(req, res){
   };
   axios.request(options)
   .then((rizz)=>rizz.data)
-  .then((Api)=>{
-
-    res.status(200).json(Api)
-
-  })
+  .then((Api)=>{res.status(200).json(Api)})
   .catch(error=>console.log(error))
 }
 

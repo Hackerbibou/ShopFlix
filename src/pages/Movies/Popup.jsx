@@ -22,7 +22,7 @@ function handleClick(e){
        
      }
         getMo()
-        setTimeout(()=>{window.location.reload()},0.5) 
+        // setTimeout(()=>{window.location.reload()},0.5) 
         
    
     

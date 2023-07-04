@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'build')));
 
 app.use(cors({
-  origin:['https://shopflix.onrender.com']
+  origin:['https://localhost3000','https://shopflix.onrender.com']
 
 }))
 
