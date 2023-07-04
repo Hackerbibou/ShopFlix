@@ -20,7 +20,7 @@ app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));
 
 app.use(cors({
-  origin:['http://localhost:3000','https://shopflix.onrender.com']
+  origin:['https://shopflix.onrender.com']
 
 }))
 
