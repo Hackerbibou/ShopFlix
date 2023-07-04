@@ -5,7 +5,17 @@ import {motion} from 'framer-motion'
 export default function PopUp({popUp, setList,list}) {
 
 function handleClick(e){
-
+  setList([...list,{
+    name: popUp.title,
+    release_date:popUp.release_date,
+    genre: popUp.genre_ids,
+    rating: popUp.vote_average,
+    description: popUp.overview,
+    poster_path: popUp.poster_path,
+    backdrop_path: popUp.backdrop_path,
+    original_language: popUp.original_language,
+    popularity:popUp.popularity
+}])
     async function getMo(){
             const movis = await addList({
                 name: popUp.title,
@@ -18,17 +28,7 @@ function handleClick(e){
                 original_language: popUp.original_language,
                 popularity:popUp.popularity
             })
-            setList([...list,{
-              name: popUp.title,
-              release_date:popUp.release_date,
-              genre: popUp.genre_ids,
-              rating: popUp.vote_average,
-              description: popUp.overview,
-              poster_path: popUp.poster_path,
-              backdrop_path: popUp.backdrop_path,
-              original_language: popUp.original_language,
-              popularity:popUp.popularity
-          }])
+           
             console.log(movis)
        
      }
