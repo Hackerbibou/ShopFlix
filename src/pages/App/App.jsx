@@ -32,9 +32,7 @@ export default function App() {
               <Route path='/kids' element={<Kids/>}/>
               <Route path='/setting' element={<Setting user={user} setUser={setUser}/>}/>
               <Route path="/orders/new" element={<NewOrderPage />} />
-
               {/* Route components in here */}
-               
              {/* <Route path="/orders" element={<OrderHistoryPage />} /> */}
             </Routes>
           </>
