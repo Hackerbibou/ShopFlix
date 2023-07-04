@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { addList } from '../../utilities/list-api'
 import {motion} from 'framer-motion'
-export default function PopUp({popUp}) {
-const [listState,setList] = useState ({})
+export default function PopUp({popUp, setList,list}) {
 
 function handleClick(e){
 
@@ -19,6 +18,17 @@ function handleClick(e){
                 original_language: popUp.original_language,
                 popularity:popUp.popularity
             })
+            setList([...list,{
+              name: popUp.title,
+              release_date:popUp.release_date,
+              genre: popUp.genre_ids,
+              rating: popUp.vote_average,
+              description: popUp.overview,
+              poster_path: popUp.poster_path,
+              backdrop_path: popUp.backdrop_path,
+              original_language: popUp.original_language,
+              popularity:popUp.popularity
+          }])
             console.log(movis)
        
      }

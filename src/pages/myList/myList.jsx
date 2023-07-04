@@ -1,9 +1,19 @@
 import React, {useEffect, useState} from 'react'
-import {addList, getList, removeItem} from '../../utilities/list-api'
+import {getList} from '../../utilities/list-api'
 import {motion} from 'framer-motion'
 import { Link } from 'react-router-dom'
-export default function MyList() {
-    const [list,setList]=useState([])
+import PopupRemove from '../Movies/PopupRemove'
+
+export default function MyList({list,setList}) {
+
+    
+
+
+    
+
+
+
+
     const [d,setD]=useState(0)
     const [pop,setPop]=useState({})
     useEffect(()=>{
@@ -21,9 +31,8 @@ export default function MyList() {
    
     
     return (
-        <div
-        >
-            <PopUp popUp={pop}/>
+        <div >
+            <PopupRemove list={list} setlist={setList} popUp={pop}/>
             <h1>My List</h1>
             <div className='UpcomingWrapper'>
                 
@@ -45,49 +54,3 @@ export default function MyList() {
       )
 }
 
-
-function PopUp({popUp}) {
-    
-    function handleClick(name){
-        (async()=>{
-          
-            console.log(name)
-            const movi = await removeItem(name)
-              
-           
-        })() 
-        
-    }
-    
-    
-      return(
-        <div
-        
-        className='popup' style={{backgroundImage:`url("https://www.themoviedb.org/t/p/original${popUp.backdrop_path}")`}}> 
-         
-          <div>
-          <div className='movieTitle'>
-          <h2 className='popTitle'> 
-          {popUp.name} 
-          </h2>
-          
-          <p className='originalLanguage'>Original Language: {popUp.original_language} &nbsp; &nbsp; Popularity: {popUp.popularity} &nbsp; &nbsp;
-          </p>
-          <p className='overview'>{popUp.description}</p>
-          <div className='btnDiv'>
-            <button onClick={(e)=>{document.querySelector('.popup').style.display = 'none';handleClick(popUp.name)}}>Remove</button>
-            
-          </div>
-          
-          </div>
-    
-          <span className='exitPopup' onClick={()=>{
-          document.querySelector('.popup').style.display = 'none'
-          }}> 
-          X
-          </span> 
-        </div>
-        </div>
-      )
-    }
-    

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import PopUp from './Popup';
 import { motion } from 'framer-motion';
 
-export default function Movies({ setCart, cart, setTrending }) {
+export default function Movies({ list, setList, setTrending }) {
   const [rands, setRand] = useState(Math.floor(Math.random() * 20));
   const [description, setD] = useState('');
   const [movi, setMovi] = useState('');
@@ -49,7 +49,7 @@ export default function Movies({ setCart, cart, setTrending }) {
 
   return (
     <div className="App">
-      <PopUp popUp={popUp} />
+      <PopUp popUp={popUp} list={list} setList={setList}/>
 
       <div
         className="movieBanner"

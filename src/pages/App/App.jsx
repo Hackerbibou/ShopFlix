@@ -16,7 +16,8 @@ import Upcoming from '../Upcoming/Upcoming';
 
 export default function App() {
   const [trending, setTrending]= useState([])
-  const [user, setUser] = useState(getUser());
+  const [user, setUser] = useState(getUser())
+  const [list,setList]=useState([])
   return (
     <main className="">
       { user ?
@@ -24,8 +25,8 @@ export default function App() {
             <MenuBar user={user}/>
             <NavBar user={user} setUser={setUser} />
             <Routes>
-              <Route path='/' element={<Movies  setTrending={setTrending}/>}/>
-              <Route path='/list' element={<MyList />}/>
+              <Route path='/' element={<Movies list={list} setList={setList}  setTrending={setTrending}/>}/>
+              <Route path='/list' element={<MyList list={list} setList={setList} />}/>
               <Route path='/trending' element={<Trending movies={trending}/>}/>
               <Route path='/upcoming' element={<Upcoming />}/>
               <Route path='/search' element={<Search/>}/>
