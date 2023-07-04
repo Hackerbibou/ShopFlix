@@ -55,8 +55,7 @@ function PopUp({popUp}) {
             const movi = await removeItem(name)
               
            
-        })()
-            setTimeout(()=>{window.location.reload()},0.5) 
+        })() 
         
     }
     

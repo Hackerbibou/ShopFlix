@@ -6,7 +6,7 @@ export default function PopUp({popUp}) {
 const [listState,setList] = useState ({})
 
 function handleClick(e){
-  e.preventDefault()
+
     async function getMo(){
             const movis = await addList({
                 name: popUp.title,
@@ -23,7 +23,7 @@ function handleClick(e){
        
      }
         getMo()
-        // setTimeout(()=>{window.location.reload()},0.5) 
+         
         
    
     
