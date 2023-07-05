@@ -16,7 +16,7 @@ export default function MyList({list,setList}) {
         })()
         
         
-    },[])
+    },[setList])
 
     return (
         <div >
