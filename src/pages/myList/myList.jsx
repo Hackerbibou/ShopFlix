@@ -4,7 +4,7 @@ import {motion} from 'framer-motion'
 import PopupRemove from '../Movies/PopupRemove'
 
 export default function MyList({list,setList}) {
-
+    const [ee,setE]=useState(0)
     const [pop,setPop]=useState({})
     
     useEffect(()=>{
@@ -15,11 +15,11 @@ export default function MyList({list,setList}) {
         })()
         
         
-    },[setList])
+    },[e])
 
     return (
         <div >
-            <PopupRemove list={list} setlist={setList} popUp={pop}/>
+            <PopupRemove ee={ee} setE={setE} popUp={pop}/>
             <h1>My List</h1>
             <div className='UpcomingWrapper'>
                 
