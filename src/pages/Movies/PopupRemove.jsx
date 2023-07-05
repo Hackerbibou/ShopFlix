@@ -27,7 +27,7 @@ export default function PopupRemove({popUp, ee, setE}) {
           </p>
           <p className='overview'>{popUp.description}</p>
           <div className='btnDiv'>
-            <button onClick={(e)=>{e.preventDefault();document.querySelector('.popup').style.display = 'none';handleClick(e,popUp.name)}}>Remove</button>
+            <button onClick={(e)=>{document.querySelector('.popup').style.display = 'none';handleClick(e,popUp.name)}}>Remove</button>
             
           </div>
           
