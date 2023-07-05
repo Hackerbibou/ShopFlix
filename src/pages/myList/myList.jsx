@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import PopupRemove from '../Movies/PopupRemove'
 
 export default function MyList({list,setList}) {
-
+    const temporary = [...list]
     const [d,setD]=useState(0)
     const [pop,setPop]=useState({})
     useEffect(()=>{
@@ -20,7 +20,7 @@ export default function MyList({list,setList}) {
         
         
     },[])
-   
+    if(list.length===0 && temporary.length>0){setList(temporary)}
     
     return (
         <div >
@@ -36,10 +36,9 @@ export default function MyList({list,setList}) {
                     animate={{opacity:1,x:0,delay:0.5*i}}
                     exit={{opacity:0,x:20,delay:0.1*i}}
                     onClick={(e)=>{ e.preventDefault();setPop(elem.items);document.querySelector('.popup').style.display = 'flex'}}
-                    key={i} className='movie1' style={{backgroundImage: `url("https://www.themoviedb.org/t/p/original${elem.items.backdrop_path}")`}}>
+                    key={i} className='movie1' style={{backgroundImage: `url("https://www.themoviedb.org/t/p/original${elem.items.backdrop_path}")`}}/>
 
-    {elem.items.name}
-                    </motion.div>
+
                 })
                 }</div>
         </div>
