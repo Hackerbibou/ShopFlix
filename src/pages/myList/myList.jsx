@@ -20,7 +20,7 @@ export default function MyList({list,setList}) {
         
         
     },[])
-    if(list.length===0 && temporary.length>0){setList(temporary)}
+   
     
     return (
         <div >
