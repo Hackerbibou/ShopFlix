@@ -4,10 +4,9 @@ import {addList, getList, removeItem} from '../../utilities/list-api'
 export default function PopupRemove({popUp, list, setList}) {
 
     function handleClick(name){
-      setTimeout(()=>{
         let temp=list.filter(elem=>elem.items.name!==name)
         setList(temp)
-      })
+     
         (async()=>{
           
             // console.log(name)
@@ -35,7 +34,7 @@ export default function PopupRemove({popUp, list, setList}) {
           </p>
           <p className='overview'>{popUp.description}</p>
           <div className='btnDiv'>
-            <button onClick={(e)=>{document.querySelector('.popup').style.display = 'none';handleClick(popUp.name)}}>Remove</button>
+            <button onClick={(e)=>{e.preventDefault();document.querySelector('.popup').style.display = 'none';handleClick(popUp.name)}}>Remove</button>
             
           </div>
           
