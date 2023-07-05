@@ -14,12 +14,12 @@ export default function MyList({list,setList}) {
         (async()=>{
             
             const movi = await getList()
-            console.log('This is movi '+ movi)
+            console.log('This is movi '+ movi[movi.length-1])
             setList(movi)
         })()
         
         
-    },[])
+    },[setList])
     // console.log(list)
     //  if(!list.length && temporary.length>0){setList(temporary)}
     // console.log('This is list '+list[0])
