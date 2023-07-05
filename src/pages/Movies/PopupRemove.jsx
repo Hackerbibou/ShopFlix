@@ -12,9 +12,6 @@ export default function PopupRemove({popUp, ee, setE}) {
         setE(ee+1)
         
     }
-    
-    
-    
       return(
         <div
         
