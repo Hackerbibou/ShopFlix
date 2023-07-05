@@ -11,11 +11,11 @@ export default function PopupRemove({popUp, list, setList}) {
         })() 
         setTimeout(()=>{
             (async()=>{
-            const moo = await getList()
-            setList(moo)
-            
-        })()
-         },1) 
+              const moo = await getList()
+              setList(moo)
+              
+          })()
+           },1)
         
         
     }
