@@ -27,7 +27,7 @@ export default function MyList({list,setList}) {
         console.log(list)
         
         
-    },[list])
+    },[])
    
     
     return (
