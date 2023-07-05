@@ -14,7 +14,7 @@ export default function MyList({list,setList}) {
         (async()=>{
             
             const movi = await getList()
-            console.log('This is movi '+movi)
+            console.log('This is movi '+ movi)
                 setD(1)
                 if(!movi && temporary.length>0){setList(temporary)}
             else{setList(movi)}
@@ -22,11 +22,10 @@ export default function MyList({list,setList}) {
         
         
     },[])
-    if(list.length===0 && temporary.length>0){setList(temporary)}
+   
     console.log('This is list '+list[0])
     console.log('This is temporary after functions name:'+temporary[0].name)
-    console.log('This is temporary after functions items:'+temporary[0].items)
-    console.log('This is temporary after functions items name:'+temporary[0].items.name)
+    console.log('This is temporary after functions name:'+list[0].name)
     return (
         <div >
             <PopupRemove list={list} setlist={setList} popUp={pop}/>
