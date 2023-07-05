@@ -1,16 +1,15 @@
 import {addList, getList, removeItem} from '../../utilities/list-api'
 
 
-export default function PopupRemove({popUp, list, setList}) {
+export default function PopupRemove({popUp, list, setlist}) {
     
     function handleClick(name){
-        // let temp=list.filter(elem=>elem.items.name!==name)
-        //     setList(temp)
         (async()=>{
           
-            console.log(name)
+            // console.log(name)
             const movi = await removeItem(name)
-            
+            // let temp=list.filter(elem=>elem.items.name===name)
+            // setList(temp)
            
         })() 
         

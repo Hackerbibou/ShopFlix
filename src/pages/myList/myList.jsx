@@ -6,14 +6,6 @@ import PopupRemove from '../Movies/PopupRemove'
 
 export default function MyList({list,setList}) {
 
-    
-
-
-    
-
-
-
-
     const [d,setD]=useState(0)
     const [pop,setPop]=useState({})
     useEffect(()=>{
