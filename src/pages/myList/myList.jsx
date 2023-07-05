@@ -5,27 +5,26 @@ import { Link } from 'react-router-dom'
 import PopupRemove from '../Movies/PopupRemove'
 
 export default function MyList({list,setList}) {
-    const temporary = [...list]
-    console.log('This is temporary '+temporary)
-    const [d,setD]=useState(0)
+    // const temporary = [...list]
+    // console.log('This is temporary '+temporary)
     const [pop,setPop]=useState({})
+    
     useEffect(()=>{
        
         (async()=>{
             
             const movi = await getList()
             console.log('This is movi '+ movi)
-                setD(1)
-                if(!movi && temporary.length>0){setList(temporary)}
-            else{setList(movi)}
+            setList(movi)
         })()
         
         
     },[])
-   
-    console.log('This is list '+list[0])
-    console.log('This is temporary after functions name:'+temporary[0].name)
-    console.log('This is temporary after functions name:'+list[0].name)
+    // console.log(list)
+    //  if(!list.length && temporary.length>0){setList(temporary)}
+    // console.log('This is list '+list[0])
+    // console.log('This is temporary after functions name:'+temporary[0].name)
+    // console.log('This is temporary after functions name:'+list[0].name)
     return (
         <div >
             <PopupRemove list={list} setlist={setList} popUp={pop}/>
