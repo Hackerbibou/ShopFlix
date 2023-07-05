@@ -25,8 +25,6 @@ export default function Movies({ list, setList, setTrending }) {
         f: movis.f,
         g: movis.g,
       });
-
-      console.log(movis);
       setMovi(movis.a[rands]);
       setD(movis.a[rands].overview.slice(0, 150));
       setDigit(1);
@@ -64,7 +62,6 @@ export default function Movies({ list, setList, setTrending }) {
               onClick={() => {
                 setPopUp({ ...movi });
                 document.querySelector('.popup').style.display = 'flex';
-                console.log('this is popUp', popUp);
               }}
             >
               ADD LIST
@@ -92,7 +89,7 @@ export default function Movies({ list, setList, setTrending }) {
                   onClick={() => {
                     setPopUp({ ...movie });
                     document.querySelector('.popup').style.display = 'flex';
-                    console.log('this is popUp', popUp);
+  
                   }}
                   className="movie"
                   style={{
@@ -122,7 +119,7 @@ export default function Movies({ list, setList, setTrending }) {
                     onClick={() => {
                       setPopUp({ ...movie });
                       document.querySelector('.popup').style.display = 'flex';
-                      console.log('this is popUp', popUp);
+    
                     }}
                     className="movie1"
                     style={{
@@ -154,7 +151,7 @@ export default function Movies({ list, setList, setTrending }) {
                     onClick={() => {
                       setPopUp({ ...movie });
                       document.querySelector('.popup').style.display = 'flex';
-                      console.log('this is popUp', popUp);
+    
                     }}
                     className="movie1"
                     style={{
@@ -186,7 +183,7 @@ export default function Movies({ list, setList, setTrending }) {
                       setPopUp({ ...movie });
                       document.querySelector('.popup').style.display = 'flex';
 
-                      console.log('this is popUp', popUp);
+    
                     }}
                     className="movie1"
                     style={{
@@ -218,7 +215,7 @@ export default function Movies({ list, setList, setTrending }) {
                       setPopUp({ ...movie });
                       document.querySelector('.popup').style.display = 'flex';
 
-                      console.log('this is popUp', popUp);
+    
                     }}
                     className="movie1"
                     style={{
@@ -250,7 +247,7 @@ export default function Movies({ list, setList, setTrending }) {
                       setPopUp({ ...movie });
                       document.querySelector('.popup').style.display = 'flex';
 
-                      console.log('this is popUp', popUp);
+    
                     }}
                     className="movie1"
                     style={{
@@ -282,7 +279,7 @@ export default function Movies({ list, setList, setTrending }) {
                       setPopUp({ ...movie });
                       document.querySelector('.popup').style.display = 'flex';
 
-                      console.log('this is popUp', popUp);
+    
                     }}
                     className="movie1"
                     style={{

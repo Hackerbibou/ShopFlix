@@ -6,6 +6,7 @@ import PopupRemove from '../Movies/PopupRemove'
 
 export default function MyList({list,setList}) {
     const temporary = [...list]
+    console.log('This is temporary '+temporary)
     const [d,setD]=useState(0)
     const [pop,setPop]=useState({})
     useEffect(()=>{
@@ -13,15 +14,17 @@ export default function MyList({list,setList}) {
         (async()=>{
             
             const movi = await getList()
+            console.log('This is movi '+movi)
                 setD(1)
-            setList(movi)
+                if(!movi && temporary.length>0){setList(temporary)}
+            else{setList(movi)}
         })()
-        console.log(list)
         
         
     },[])
-   
-    
+    if(list.length===0 && temporary.length>0){setList(temporary)}
+    console.log('This is list '+list)
+    console.log('This is temporary after functions:'+temporary)
     return (
         <div >
             <PopupRemove list={list} setlist={setList} popUp={pop}/>
