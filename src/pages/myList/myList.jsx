@@ -15,7 +15,7 @@ export default function MyList({list,setList}) {
         })()
         
         
-    },[e])
+    },[ee])
     return (
         <div >
             <PopupRemove ee={ee} setE={setE} popUp={pop}/>
