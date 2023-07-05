@@ -5,8 +5,6 @@ import {motion} from 'framer-motion'
 export default function PopUp({popUp, setList,list}) {
 
 function handleClick(e){
-
-
     async function getMo(){
             const movis = await addList({
                 name: popUp.title,
