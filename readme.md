@@ -1,5 +1,5 @@
-# ShopFlix - Netflix App for Browsing Movies and Making Watch Lists
-ShopFlix - Netflix App for Browsing Movies and Making Watch Lists
+# ShopFlix - No Frills App for Browsing Mivies and Making Watch Lists
+ShopFlix - No Frills App for Browsing Mivies and Making Watch Lists
 - [ShopFlix Trello Board](https://trello.com/b/N7H9GMCN/project-4-flix)
 - [ERD](https://lucid.app/lucidchart/8dd79b25-5d32-466e-9800-6ecd3ade1ee3/edit?view_items=kWBYMBmO7AJt&invitationId=inv_b1495514-3444-47c7-a3ec-c8d1c8217534)
 ## ERD
@@ -13,26 +13,23 @@ ShopFlix - Netflix App for Browsing Movies and Making Watch Lists
 ![Home Page](https://i.imgur.com/ckADrZ8.png)
 **Movie Detail Page**
 ![Movie Detail Page](https://i.imgur.com/OCCsv9f.png)
-**Menu**
-![Menu](https://i.imgur.com/GfxtMTg.png)
-**Settings**
-![Settings](https://i.imgur.com/4FXiLrK.png)
 **My List**
+![My List](https://i.imgur.com/grnmyeZ.png)
 ## Technologies Used
-Technologies used :
 - MERN Stack: MongoDB, Express, React, Node
 - HTML
 - CSS
 - Materialize
-- Render for deployment
-- Javascript
-- Materialise
 - Framer-motion
-- TMDB
-- API
+- TMDB API
+- Render for deplyoment
+- Javascript
 ## Getting Started
 Deployed Application:
-- https://shopflix.onrender.com/
+- https://https://shopflix.onrender.com//
 Trello Planning Board:
 - https://trello.com/b/N7H9GMCN/project-4-flix
 ## Icebox Features
+- Map feature for nearby pharmacies
+- Fixing the user timezone issue (UTC to localized time)
+- API implementation for medication information
