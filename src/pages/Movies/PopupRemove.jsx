@@ -5,11 +5,17 @@ export default function PopupRemove({popUp, list, setList}) {
 
     function handleClick(name){
         let temp=list.filter((elem)=>elem.name===name)
-        setList(temp)
+        let tempo=[...list.filter((elem)=>elem.name===name)]
+        let tempi=[...list.filter((elem)=>elem.name!==name)]
+        console.log(temp)
+        console.log(tempo)
+        console.log(tempi)
+        
         (async()=>{
             const movi = await removeItem(name)
             
         })() 
+        setList(temp)
         
     }
     
