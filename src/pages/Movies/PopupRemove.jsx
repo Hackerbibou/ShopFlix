@@ -3,8 +3,8 @@ import {addList, getList, removeItem} from '../../utilities/list-api'
 
 export default function PopupRemove({popUp, ee, setE}) {
 
-    function handleClick(e,name){
-    e.preventDefault()
+    function handleClick(name){
+    
         (async()=>{
             const movi = await removeItem(name)
             
@@ -27,7 +27,7 @@ export default function PopupRemove({popUp, ee, setE}) {
           </p>
           <p className='overview'>{popUp.description}</p>
           <div className='btnDiv'>
-            <button onClick={(e)=>{document.querySelector('.popup').style.display = 'none';handleClick(e,popUp.name)}}>Remove</button>
+            <button onClick={(e)=>{e.preventDefault();document.querySelector('.popup').style.display = 'none';handleClick(e,popUp.name)}}>Remove</button>
             
           </div>
           
