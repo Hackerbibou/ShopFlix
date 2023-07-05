@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import {getList} from '../../utilities/list-api'
 import {motion} from 'framer-motion'
-import { Link } from 'react-router-dom'
 import PopupRemove from '../Movies/PopupRemove'
 
 export default function MyList({list,setList}) {

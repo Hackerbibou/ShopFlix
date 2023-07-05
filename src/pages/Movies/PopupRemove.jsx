@@ -7,9 +7,16 @@ export default function PopupRemove({popUp, list, setList}) {
        
         (async()=>{
             const movi = await removeItem(name)
+            
+        })() 
+        setTimeout(()=>{
+            (async()=>{
             const moo = await getList()
             setList(moo)
-        })() 
+            
+        })()
+         },1) 
+        
         
     }
     

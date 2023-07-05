@@ -20,12 +20,16 @@ function handleClick(e){
                 popularity:popUp.popularity
             })
            
-            const moo = await getList()
-            setList(moo)
        
      }
         getMo()
-         
+       setTimeout(()=>{
+        (async()=>{
+          const moo = await getList()
+          setList(moo)
+          
+      })()
+       },1) 
         
    
     
