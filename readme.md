@@ -29,7 +29,3 @@ Deployed Application:
 - https://https://shopflix.onrender.com//
 Trello Planning Board:
 - https://trello.com/b/N7H9GMCN/project-4-flix
-## Icebox Features
-- Map feature for nearby pharmacies
-- Fixing the user timezone issue (UTC to localized time)
-- API implementation for medication information
