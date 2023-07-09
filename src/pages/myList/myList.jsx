@@ -6,19 +6,24 @@ import PopupRemove from '../Movies/PopupRemove'
 export default function MyList({list,setList}) {
     const [ee,setE]=useState(0)
     const [pop,setPop]=useState({})
-    
+    const [d, setD]=useState(0)
     useEffect(()=>{
         (async()=>{
             
             const movi = await getList()
             setList(movi)
+            setD(1)
         })()
         
         
-    },[ee])
+    },[d])
+    
+
+    
+  
     return (
         <div >
-            <PopupRemove ee={ee} setE={setE} popUp={pop}/>
+            <PopupRemove ee={ee} setD={setD} setE={setE} popUp={pop}/>
             <h1>My List</h1>
             <div className='UpcomingWrapper'>
                 

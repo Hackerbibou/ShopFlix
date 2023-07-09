@@ -1,6 +1,6 @@
 import sendRequest from "./send-request";
 const BASE_URL = 'https://shopflix-api.onrender.com/api/list';
-
+// 'https://shopflix-api.onrender.com'
 export async function addList(items) {
   return sendRequest(BASE_URL,'POST',{items})
 }

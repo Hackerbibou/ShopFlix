@@ -13,6 +13,7 @@ const listSchema = new Schema ({
         ref: 'Movie',
         required: true
     }]
+    
 }, {
     timestamps: true
 })
