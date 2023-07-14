@@ -22,7 +22,7 @@ export default function App() {
   const [list,setList]=useState([])
   (async function (){
     const api= await checkToken()
-    console.log('api on')
+    console.log('api is on')
   })()
   return (
     <main className="">
