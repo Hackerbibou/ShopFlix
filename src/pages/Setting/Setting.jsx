@@ -54,7 +54,8 @@ export default function Setting({ setUser, user}) {
            ><img
               
               alt=""
-              className="profilePic"
+              className={states.profilePic==="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"?'profilePic pP ':'profilePic '}
+
               src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
 
             />
@@ -65,7 +66,8 @@ export default function Setting({ setUser, user}) {
             ><img
               
               alt=""
-              className="profilePic"
+              className={states.profilePic==="https://ih1.redbubble.net/image.618427277.3222/flat,800x800,075,f.u2.jpg"?'profilePic pP ':'profilePic '}
+        
               src="https://ih1.redbubble.net/image.618427277.3222/flat,800x800,075,f.u2.jpg"
               
             />
@@ -76,7 +78,8 @@ export default function Setting({ setUser, user}) {
             ><img
               
               alt=""
-              className="profilePic"
+              className={states.profilePic==="https://wallpapers.com/images/hd/netflix-profile-pictures-1000-x-1000-dyrp6bw6adbulg5b.jpg"?'profilePic pP ':'profilePic '}
+             
               src=" https://wallpapers.com/images/hd/netflix-profile-pictures-1000-x-1000-dyrp6bw6adbulg5b.jpg"
               
             />
@@ -85,9 +88,10 @@ export default function Setting({ setUser, user}) {
             <div onClick={(e)=>handleProfilePic(e,"https://ih0.redbubble.net/image.618379802.1473/flat,1000x1000,075,f.u2.jpg")}
             
             ><img
-              value="https://ih0.redbubble.net/image.618379802.1473/flat,1000x1000,075,f.u2.jpg"
+              
               alt=""
-              className="profilePic"
+              className={states.profilePic==="https://ih0.redbubble.net/image.618379802.1473/flat,1000x1000,075,f.u2.jpg"?'profilePic pP ':'profilePic '}
+           
               src=" https://ih0.redbubble.net/image.618379802.1473/flat,1000x1000,075,f.u2.jpg"
               
             />
@@ -97,7 +101,8 @@ export default function Setting({ setUser, user}) {
             ><img
               
               alt=""
-              className="profilePic"
+              className={states.profilePic==="https://pro2-bar-s3-cdn-cf1.myportfolio.com/dddb0c1b4ab622854dd81280840458d3/92995677ac0aab719760c33c_rw_600.png?h=c453d5442731bca5c02fcc8a4542af57"?'profilePic pP ':'profilePic '}
+          
               src=" https://pro2-bar-s3-cdn-cf1.myportfolio.com/dddb0c1b4ab622854dd81280840458d3/92995677ac0aab719760c33c_rw_600.png?h=c453d5442731bca5c02fcc8a4542af57"
                />
 
@@ -108,7 +113,8 @@ export default function Setting({ setUser, user}) {
             ><img
               
               alt=""
-              className="profilePic"
+              className={states.profilePic==="https://external-preview.redd.it/0dTT-3SprPcsNCqo1GTCI-nqGM9EdZYwqyYr_pZ-baE.jpg?auto=webp&s=a1e8532d326f5aa122df2f31694bf142f117fc06"?'profilePic pP ':'profilePic '}
+            
               src=" https://external-preview.redd.it/0dTT-3SprPcsNCqo1GTCI-nqGM9EdZYwqyYr_pZ-baE.jpg?auto=webp&s=a1e8532d326f5aa122df2f31694bf142f117fc06"
                  />
 
@@ -119,7 +125,8 @@ export default function Setting({ setUser, user}) {
             ><img
               
               alt=""
-              className="profilePic"
+              className={states.profilePic==="https://i.pinimg.com/564x/b2/a0/29/b2a029a6c2757e9d3a09265e3d07d49d.jpg"?'profilePic pP ':'profilePic '}
+        
               src="https://i.pinimg.com/564x/b2/a0/29/b2a029a6c2757e9d3a09265e3d07d49d.jpg"
                 />
 
@@ -130,7 +137,8 @@ export default function Setting({ setUser, user}) {
             ><img
               
               alt=""
-              className="profilePic"
+              className={states.profilePic==="https://i.pinimg.com/736x/fb/8e/8a/fb8e8a96fca2f049334f312086a6e2f6--vini-cata.jpg"?'profilePic pP ':'profilePic '}
+          
               src="https://i.pinimg.com/736x/fb/8e/8a/fb8e8a96fca2f049334f312086a6e2f6--vini-cata.jpg"
                />
 
@@ -141,7 +149,8 @@ export default function Setting({ setUser, user}) {
             ><img
               
               alt=""
-              className="profilePic"
+              className={states.profilePic==="https://icon-library.com/images/netflix-icon-black/netflix-icon-black-19.jpg"?'profilePic pP ':'profilePic '}
+       
               src="https://icon-library.com/images/netflix-icon-black/netflix-icon-black-19.jpg"
               />
 
@@ -152,7 +161,8 @@ export default function Setting({ setUser, user}) {
             ><img
               
               alt=""
-              className="profilePic"
+              className={states.profilePic==="https://wallpapers.com/images/hd/netflix-profile-pictures-1000-x-1000-62wgyitks6f4l79m.jpg"?'profilePic pP ':'profilePic '}
+
               src=" https://wallpapers.com/images/hd/netflix-profile-pictures-1000-x-1000-62wgyitks6f4l79m.jpg"
              />
             </div>
