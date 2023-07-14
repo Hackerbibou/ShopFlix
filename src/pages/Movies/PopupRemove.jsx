@@ -1,7 +1,7 @@
 import {addList, getList, removeItem} from '../../utilities/list-api'
 
 
-export default function PopupRemove({popUp, ee, setList,setD}) {
+export default function PopupRemove({popUp, setList}) {
 
     function handleClick(name){
     

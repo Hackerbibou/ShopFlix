@@ -16,14 +16,14 @@ import Upcoming from '../Upcoming/Upcoming';
 import { checkToken } from '../../utilities/users-api';
 
 export default function App() {
-
-  const [trending, setTrending]= useState([])
-  const [user, setUser] = useState(getUser())
-  const [list,setList]=useState([])
   (async function (){
     const api= await checkToken()
     console.log('api is on')
   })()
+  const [trending, setTrending]= useState([])
+  const [user, setUser] = useState(getUser())
+  const [list,setList]=useState([])
+  
   return (
     <main className="">
       { user ?

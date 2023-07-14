@@ -23,7 +23,7 @@ export default function MyList({list,setList}) {
   
     return (
         <div >
-            <PopupRemove ee={ee} setD={setD} setE={setE} popUp={pop}/>
+            <PopupRemove setList={setList} popUp={pop}/>
             <h1>My List</h1>
             <div className='UpcomingWrapper'>
                 
