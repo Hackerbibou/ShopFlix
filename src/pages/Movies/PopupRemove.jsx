@@ -4,7 +4,7 @@ import {addList, getList, removeItem} from '../../utilities/list-api'
 export default function PopupRemove({popUp, setList}) {
 
     function handleClick(name,e){
-      e.preventDefault()
+    
         (async()=>{
             const movi = await removeItem(name)
             
@@ -17,7 +17,7 @@ export default function PopupRemove({popUp, setList}) {
         })()
          },1) 
           
-        
+         
         
     }
       return(
