@@ -37,11 +37,11 @@ export default function Movies({ list, setList, setTrending }) {
     setTrending(movies.a);
   }, [movies]);
 
-  useEffect(() => {
-    if ((movies.a === undefined||movies.b === undefined||movies.c === undefined) && digit === 1) {
+  
+    if ((movies.a === undefined||movies.b === undefined||movies.c === undefined ||movi === undefined) && digit === 1) {
       window.location.reload();
     }
-  }, []);
+
 
 
 
