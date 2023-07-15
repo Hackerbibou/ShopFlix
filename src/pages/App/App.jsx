@@ -13,13 +13,10 @@ import Kids from '../Kids/Kids';
 import Setting from '../Setting/Setting';
 import Trending from '../Trending/Trending';
 import Upcoming from '../Upcoming/Upcoming';
-import { checkToken } from '../../utilities/users-api';
+
 
 export default function App() {
-  (async function (){
-    const api= await checkToken()
-    console.log('api is on')
-  })()
+  
   const [trending, setTrending]= useState([])
   const [user, setUser] = useState(getUser())
   const [list,setList]=useState([])

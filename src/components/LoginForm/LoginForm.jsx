@@ -1,7 +1,12 @@
 import { useState } from 'react';
 import * as usersService from '../../utilities/users-service';
+import { checkToken } from '../../utilities/users-api';
 
 export default function LoginForm({ setUser, setUpdate }) {
+  (async function (){
+    const api= await checkToken()
+    console.log('api is on')
+  })()
   const [credentials, setCredentials] = useState({
     email: '',
     password: ''
