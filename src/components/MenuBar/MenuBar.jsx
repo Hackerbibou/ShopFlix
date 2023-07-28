@@ -23,7 +23,7 @@ useEffect(()=>{
             animate={{opacity:1}}
             exit={{opacity:0}}
     className='menuBar'>
-        <Link to='/'><img  className="navLogo" src="https://photos.app.goo.gl/TNwxz6Bu5tTtzHUm8" alt="Netflix Logo"></img></Link>
+        <Link to='/'><img  className="navLogo" src="https://lh3.googleusercontent.com/pw/AIL4fc_0yI2SBaiRpLvNo5TU4jMBOVvfHMnwpT3X8udrZVdwSTOwP8-pjp23ASj-ygDiypSLre1jxbTGPN1C-Au-u2yJxV5pg71IU0ETgA65_powG97OlIwbExSuidVlQdUn7GdkVbi6_P1-Jtmv4Fx8Q9YU=w1515-h549-s-no?authuser=0" alt=""></img></Link>
         <div className='menuBarFlex'>
         
         <Link to='/search'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="28x28" fill="#d1d1d1" class="mercado-match" width="28" height="28" focusable="false">
