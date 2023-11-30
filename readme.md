@@ -1,5 +1,5 @@
 # ShopFlix - No Frills App for Browsing Movies and Making Watch Lists
-ShopFlix - No Frills App for Browsing Mivies and Making Watch Lists
+ShopFlix - No Frills App for Browsing Movies and Making Watch Lists
 - [ShopFlix Trello Board](https://trello.com/b/N7H9GMCN/project-4-flix)
 - [ERD](https://lucid.app/lucidchart/8dd79b25-5d32-466e-9800-6ecd3ade1ee3/edit?view_items=kWBYMBmO7AJt&invitationId=inv_b1495514-3444-47c7-a3ec-c8d1c8217534)
 ## ERD
